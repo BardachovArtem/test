@@ -1,0 +1,321 @@
+
+@mixin font-face($style-name, $file, $family, $category:"") {
+    $filepath: "../fonts/" + $family + "/" + $file;
+    @font-face {
+        font-family: "#{$style-name}";
+        src: url($filepath + ".eot");
+        src: url($filepath + ".eot?#iefix") format('embedded-opentype'), url($filepath + ".woff") format('woff'), url($filepath + ".ttf")  format('truetype'), url($filepath + ".svg#" + $style-name + "") format('svg');
+    }
+    %#{$style-name} {
+        font: {
+            @if $category != "" {
+                family: "#{$style-name}", #{$category};
+            }
+            @else {
+                family: "#{$style-name}";
+                weight: normal;
+            }
+        }
+    }
+}
+
+@include font-face(revicons, revicons, '', sans-serif);
+
+@mixin primary-settings
+{
+    float:left;
+    position:relative;
+    width:100%;
+    margin:0px;
+    padding:0px;
+}
+
+@mixin transition($value)
+{
+    transition:         $value;
+    -webkit-transition: $value;
+    -moz-transition:    $value;
+    -o-transition:      $value;
+}
+
+body
+{
+    @include primary-settings;
+    height:100%;
+}
+
+video
+{
+    max-width:100%;
+}
+
+.preloader-container 
+{
+    background-color: rgba(255,255,255,1);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    opacity:1;
+    @include transition(all .5s ease-in-out);
+
+    .loader
+    {
+        top: 50%;
+        left: 50%;
+        position: absolute;
+
+        .ball-scale-multiple > div
+        {
+            background-color:#32a3a3
+        }
+    }
+}
+
+ul.W 
+{
+    @include primary-settings;
+    list-style:none;
+
+    li.W-I
+    {   
+        @include primary-settings;
+    }
+}
+
+
+ul.header
+{
+    width:90%;
+    padding:3% 5%;
+    border-bottom:1px solid rgba(255, 255, 255, 0.4);
+    z-index:2;
+
+    li.logo
+    {
+        width:20%;
+
+        img
+        {
+            max-width:100%;
+            max-width:100%;
+            cursor:pointer;
+            @include transition(all .2s);
+
+            &:hover
+            {
+                opacity:0.5;
+            }
+        }
+    }
+
+    li.nav
+    {
+        width:80%;
+        padding-top:17px;
+
+        ul.nav
+        {
+            width:80%;
+            float:right;
+
+            li.nav-item
+            {
+                float:right;
+                width:initial;
+                padding:0px 10px; 
+
+                a
+                {
+                    color:white;
+                    text-decoration:none;
+                    color: rgba(255, 255, 255, 0.6);
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 16px;
+                    font-weight: bold;
+                    text-transform:uppercase;
+                    @include transition(all .2s ease-in-out);
+
+                    &:hover
+                    {
+                        color: rgba(255, 255, 255, 1);
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            display:none
+        }
+    }
+
+}
+
+
+
+ul.slider
+{
+    // position:absolute;
+    z-index:1;
+    height:100%;
+    margin-top:-11%;
+
+    li.slider-content
+    {
+        height:100%;
+
+        ul.slider-content
+        {
+            height:100%;
+        }
+    }
+
+    li.slider-item
+    {
+        position:absolute;
+        width:100%;
+        max-height:100%;
+        left:0;
+        top:0;
+        opacity:0;
+        z-index:9;
+        overflow:hidden;
+        @include transition(all .5s ease-in-out);
+
+        img.full
+        {
+            width:100%
+        }
+        video.full
+        {
+            width:100%   
+        }
+        div
+        {
+            position:absolute;
+            color:white;
+            font-family:'ubuntu', sans-serif;
+            @include transition(all 1s cubic-bezier(0,.73,.02,.97));
+        }
+        div.title
+        {
+            text-transform:uppercase;
+            font-weight:bold;
+            top:30%;
+            right:35%;
+            font-size:6vw;
+            text-align:right;
+            opacity:0;
+            overflow:hidden;
+        }
+        div.text
+        {
+            top:46%;
+            right:35%;
+            opacity:0;
+            font-size:2vw;
+        }
+        
+        div.btn
+        {
+            top:55%;
+            right:35%;
+            opacity:0;
+
+            a
+            {
+                text-decoration:none;
+                color:white;
+                font-family:'ubuntu', sans-serif;
+                font-size:2vw;
+                padding:10px 20px;
+                background-color: rgba(187, 159, 124, 0.74902);
+            }
+            &:hover
+            {
+                opacity:0.5;
+            }
+        }
+        div.active
+        {
+            right:10%;
+            opacity:1    
+        }
+        div.image
+        {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height:100%;
+            // transform:translate3d(0px,0px,0px);
+            // transform: matrix(1, 0, 0, 1, 0, -2.24063);
+            // background-image:url('../images/icons/ipad.png');
+            // background-position: 50% 50%;
+            // background-repeat: no-repeat;
+            
+            img
+            {
+                position:absolute;
+                top:32%;
+                // left:32%;
+                width:initial;
+                @include transition(all .1s linear);
+                transform: matrix(1, 0, 0, 1, 470, -2.24063);
+            }
+        }
+    }
+    li.active
+    {
+        opacity:1;
+        z-index:98;
+    }
+    li.slider-nav
+    {
+        position:initial;
+
+        i
+        {
+            position:absolute;
+            top:48%;
+            padding:10px 15px;
+            cursor:pointer;
+            z-index:99;
+            font-style:normal;
+
+            &::before
+            {
+                font-family: "revicons";
+                font-size: 8vw;
+                color: rgba(255,255,255,.2);
+                display: block;
+                text-align: center;
+                @include transition(all .2s ease-in-out);
+            }
+            &:hover::before
+            {
+                color: rgba(255,255,255,1);
+            }
+        }
+        i.prev-btn
+        {
+            left:1%;
+
+            &::before
+            {
+                content:'\e824'
+            }
+        }
+        i.next-btn
+        {
+            right:1%;
+
+            &::before
+            {
+                content:'\e825'
+            }
+        }
+    }
+}

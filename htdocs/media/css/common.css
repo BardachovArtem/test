@@ -1,0 +1,207 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "revicons";
+  src: url("../fonts//revicons.eot");
+  src: url("../fonts//revicons.eot?#iefix") format("embedded-opentype"), url("../fonts//revicons.woff") format("woff"), url("../fonts//revicons.ttf") format("truetype"), url("../fonts//revicons.svg#revicons") format("svg"); }
+body {
+  float: left;
+  position: relative;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  height: 100%; }
+
+video {
+  max-width: 100%; }
+
+.preloader-container {
+  background-color: white;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out; }
+  .preloader-container .loader {
+    top: 50%;
+    left: 50%;
+    position: absolute; }
+    .preloader-container .loader .ball-scale-multiple > div {
+      background-color: #32a3a3; }
+
+ul.W {
+  float: left;
+  position: relative;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  list-style: none; }
+  ul.W li.W-I {
+    float: left;
+    position: relative;
+    width: 100%;
+    margin: 0px;
+    padding: 0px; }
+
+ul.header {
+  width: 90%;
+  padding: 3% 5%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  z-index: 2; }
+  ul.header li.logo {
+    width: 20%; }
+    ul.header li.logo img {
+      max-width: 100%;
+      max-width: 100%;
+      cursor: pointer;
+      transition: all 0.2s;
+      -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      -o-transition: all 0.2s; }
+      ul.header li.logo img:hover {
+        opacity: 0.5; }
+  ul.header li.nav {
+    width: 80%;
+    padding-top: 17px; }
+    ul.header li.nav ul.nav {
+      width: 80%;
+      float: right; }
+      ul.header li.nav ul.nav li.nav-item {
+        float: right;
+        width: initial;
+        padding: 0px 10px; }
+        ul.header li.nav ul.nav li.nav-item a {
+          color: white;
+          text-decoration: none;
+          color: rgba(255, 255, 255, 0.6);
+          font-family: 'Open Sans', sans-serif;
+          font-size: 16px;
+          font-weight: bold;
+          text-transform: uppercase;
+          transition: all 0.2s ease-in-out;
+          -webkit-transition: all 0.2s ease-in-out;
+          -moz-transition: all 0.2s ease-in-out;
+          -o-transition: all 0.2s ease-in-out; }
+          ul.header li.nav ul.nav li.nav-item a:hover {
+            color: white; }
+    @media screen and (max-width: 600px) {
+      ul.header li.nav {
+        display: none; } }
+
+ul.slider {
+  z-index: 1;
+  height: 100%;
+  margin-top: -11%; }
+  ul.slider li.slider-content {
+    height: 100%; }
+    ul.slider li.slider-content ul.slider-content {
+      height: 100%; }
+  ul.slider li.slider-item {
+    position: absolute;
+    width: 100%;
+    max-height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    z-index: 9;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out; }
+    ul.slider li.slider-item img.full {
+      width: 100%; }
+    ul.slider li.slider-item video.full {
+      width: 100%; }
+    ul.slider li.slider-item div {
+      position: absolute;
+      color: white;
+      font-family: 'ubuntu', sans-serif;
+      transition: all 1s cubic-bezier(0, 0.73, 0.02, 0.97);
+      -webkit-transition: all 1s cubic-bezier(0, 0.73, 0.02, 0.97);
+      -moz-transition: all 1s cubic-bezier(0, 0.73, 0.02, 0.97);
+      -o-transition: all 1s cubic-bezier(0, 0.73, 0.02, 0.97); }
+    ul.slider li.slider-item div.title {
+      text-transform: uppercase;
+      font-weight: bold;
+      top: 30%;
+      right: 35%;
+      font-size: 6vw;
+      text-align: right;
+      opacity: 0;
+      overflow: hidden; }
+    ul.slider li.slider-item div.text {
+      top: 46%;
+      right: 35%;
+      opacity: 0;
+      font-size: 2vw; }
+    ul.slider li.slider-item div.btn {
+      top: 55%;
+      right: 35%;
+      opacity: 0; }
+      ul.slider li.slider-item div.btn a {
+        text-decoration: none;
+        color: white;
+        font-family: 'ubuntu', sans-serif;
+        font-size: 2vw;
+        padding: 10px 20px;
+        background-color: rgba(187, 159, 124, 0.74902); }
+      ul.slider li.slider-item div.btn:hover {
+        opacity: 0.5; }
+    ul.slider li.slider-item div.active {
+      right: 10%;
+      opacity: 1; }
+    ul.slider li.slider-item div.image {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: 100%; }
+      ul.slider li.slider-item div.image img {
+        position: absolute;
+        top: 32%;
+        width: initial;
+        transition: all 0.1s linear;
+        -webkit-transition: all 0.1s linear;
+        -moz-transition: all 0.1s linear;
+        -o-transition: all 0.1s linear;
+        transform: matrix(1, 0, 0, 1, 470, -2.24063); }
+  ul.slider li.active {
+    opacity: 1;
+    z-index: 98; }
+  ul.slider li.slider-nav {
+    position: initial; }
+    ul.slider li.slider-nav i {
+      position: absolute;
+      top: 48%;
+      padding: 10px 15px;
+      cursor: pointer;
+      z-index: 99;
+      font-style: normal; }
+      ul.slider li.slider-nav i::before {
+        font-family: "revicons";
+        font-size: 8vw;
+        color: rgba(255, 255, 255, 0.2);
+        display: block;
+        text-align: center;
+        transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out; }
+      ul.slider li.slider-nav i:hover::before {
+        color: white; }
+    ul.slider li.slider-nav i.prev-btn {
+      left: 1%; }
+      ul.slider li.slider-nav i.prev-btn::before {
+        content: ""; }
+    ul.slider li.slider-nav i.next-btn {
+      right: 1%; }
+      ul.slider li.slider-nav i.next-btn::before {
+        content: ""; }
+
+/*# sourceMappingURL=common.css.map */
